@@ -51,4 +51,4 @@ const check = async (url: URL, headers: any) => {
   }
 };
 
-export default check;
+export { check };

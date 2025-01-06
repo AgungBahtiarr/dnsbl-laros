@@ -154,4 +154,4 @@ const checkPrefix = async (url: URL, headers: any) => {
   }
 };
 
-export default checkPrefix;
+export { checkPrefix };

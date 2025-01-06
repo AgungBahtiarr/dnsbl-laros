@@ -31,12 +31,12 @@ const server = Bun.serve({
 
     // http://localhost:3000/check?ip=${ip}
     if (path === "/api/check") {
-      return await checkRoute(url, path, headers);
+      return await checkRoute(url, headers);
     }
 
     // http://localhost:3000/check-prefix?ip=${ip}&prefix=${prefix}
     if (path === "/api/check-prefix") {
-      return await checkPrefixRoute(url, path, headers);
+      return await checkPrefixRoute(url, headers);
     }
 
     return new Response(JSON.stringify({ error: "Endpoint not found" }), {
