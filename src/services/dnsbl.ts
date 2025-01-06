@@ -109,7 +109,6 @@ async function checkDNSBL(
     return {
       dnsbl,
       isListed: false,
-      unblockInfo: unblockInformation[dnsbl],
     };
   }
 }
