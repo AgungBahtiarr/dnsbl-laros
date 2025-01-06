@@ -12,7 +12,7 @@ To run:
 bun run index.ts
 ```
 
-###Example
+### Example
 http://localhost:3000/api/check?ip=1.1.1.1
 
 http://localhost:3000/api/check-prefix?ip=192.168.1.1&prefix=29
