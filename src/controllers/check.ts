@@ -1,7 +1,7 @@
 import { $ } from "bun";
 import { checkDNSBL, dnsblList, isValidIP } from "../services/dnsbl";
 
-const check = async (url: URL, path: string, headers: any) => {
+const check = async (url: URL, headers: any) => {
   const ip = url.searchParams.get("ip");
 
   if (!ip) {

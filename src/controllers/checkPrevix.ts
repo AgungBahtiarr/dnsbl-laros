@@ -7,11 +7,11 @@ import {
 } from "../services/dnsbl";
 import type { UnblockInfo } from "../services/unblockInfo";
 
-const checkPrefix = async (url: URL, path: string, headers: any) => {
+const checkPrefix = async (url: URL, headers: any) => {
   const baseIP = url.searchParams.get("ip");
   const prefix = parseInt(url.searchParams.get("prefix") || "");
   const maxIPs = parseInt(url.searchParams.get("limit") || "256");
-  
+
   // Validasi input
   if (!baseIP || isNaN(prefix)) {
     return new Response(
