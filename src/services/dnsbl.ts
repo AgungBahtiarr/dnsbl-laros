@@ -90,6 +90,7 @@ async function checkDNSBL(
   const lookupAddress = `${reverseIP(ip)}.${dnsbl}`;
   try {
     await resolve(lookupAddress);
+
     try {
       const txtRecord = await $`dig +short txt ${lookupAddress}`.text();
       return {
@@ -109,7 +110,6 @@ async function checkDNSBL(
     return {
       dnsbl,
       isListed: false,
-      unblockInfo: unblockInformation[dnsbl],
     };
   }
 }
