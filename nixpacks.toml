@@ -24,4 +24,4 @@ nixOverlays = [
 nixpkgsArchive = '5624e1334b26ddc18da37e132b6fa8e93b481468'
 
 [start]
-cmd = 'bun index.ts'
+cmd = 'npm index.ts'
