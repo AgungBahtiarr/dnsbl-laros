@@ -3,7 +3,7 @@ nixPkgs = ['bun']
 aptPkgs = ['build-essential']
 
 [phases.install]
-cmds = ['bun install']
+cmds = ['bun install --ignore-scripts']
 
 #[phases.build]
 #cmds = ['bun run build']
