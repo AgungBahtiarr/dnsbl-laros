@@ -1,0 +1,27 @@
+providers = ['bun']
+buildImage = 'ghcr.io/railwayapp/nixpacks:ubuntu-1733184274'
+
+[variables]
+CI = 'true'
+NIXPACKS_METADATA = 'node'
+NODE_ENV = 'production'
+NPM_CONFIG_PRODUCTION = 'false'
+[phases.build]
+dependsOn = ['install']
+cacheDirectories = ['node_modules/.cache']
+
+[phases.install]
+dependsOn = ['setup']
+cmds = ['npm install -g bun', 'bun i --no-save']
+cacheDirectories = ['/root/.bun']
+paths = ['/app/node_modules/.bin']
+
+[phases.setup]
+nixPkgs = ['nodejs_18', 'bun']
+nixOverlays = [
+    'https://github.com/railwayapp/nix-npm-overlay/archive/main.tar.gz',
+]
+nixpkgsArchive = '5624e1334b26ddc18da37e132b6fa8e93b481468'
+
+[start]
+cmd = 'bun index.ts'
